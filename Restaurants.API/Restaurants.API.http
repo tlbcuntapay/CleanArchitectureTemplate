@@ -1,0 +1,34 @@
+@host = https://localhost
+@port = 7143
+
+@Restaurants.API_HostAddress = https://localhost:7143
+
+GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/weather?max=15
+Accept: application/json
+Guid: {{$guid}}
+LocalDate: {{$localDatetime iso8601}}
+Random-integer: {{$randomInt}}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/weatherforecast/CurrentDay
+Accept: application/json
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast
+Content-Type: application/json
+
+"tarub"
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?take=3
+Content-Type: application/json
+
+{
+  "minTemp": -100,
+  "maxTemp": 120,
+}
+
+###

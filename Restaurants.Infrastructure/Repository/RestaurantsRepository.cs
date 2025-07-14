@@ -7,6 +7,7 @@ namespace Restaurants.Infrastructure.Repository;
 
 internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaurantsRepository
 {
+
     public async Task<IEnumerable<Restaurant>> GeAllAsync()
     {
         var restaurants = await dbContext.Restaurants.ToListAsync();
@@ -23,5 +24,11 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
             return null;
         }
         return restaurant;
+    }
+    public async Task<int> CreateAsync(Restaurant restaurant)
+    {
+        await dbContext.Restaurants.AddAsync(restaurant);
+        await dbContext.SaveChangesAsync();
+        return restaurant.Id;
     }
 }

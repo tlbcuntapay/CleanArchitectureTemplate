@@ -38,7 +38,23 @@ Accept: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/3
 Accept: application/json
+
+###
+
+
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name" : "Chowking",
+  "Description": "Paso de blas - Chowking",
+  "Category": "Fast Food",
+  "ContactEmail": "22",
+  "ContactNumber": "ddd",
+  "PostalCode": "2223"
+}
 
 ###

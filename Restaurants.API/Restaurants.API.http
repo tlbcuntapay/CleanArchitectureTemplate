@@ -38,7 +38,7 @@ Accept: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/3
+GET {{Restaurants.API_HostAddress}}/api/restaurants/7
 Accept: application/json
 
 ###
@@ -49,12 +49,15 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name" : "Chowking",
-  "Description": "Paso de blas - Chowking",
-  "Category": "Fast Food",
-  "ContactEmail": "22",
-  "ContactNumber": "ddd",
-  "PostalCode": "2223"
+  "Name" : "Shawarma",
+  "Description": "Paso de blas - Shawarma",
+  "Category": "Indian",
+  "HasDelivery": true,
+  "ContactEmail": "qwe@qweqwe.com",
+  "ContactNumber": "12312321312",
+  "City": "Aberjan",
+  "Street": "Narra",
+  "PostalCode": "22-231"
 }
 
 ###

@@ -43,21 +43,35 @@ Accept: application/json
 
 ###
 
-
-
 POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name" : "Shawarma",
-  "Description": "Paso de blas - Shawarma",
-  "Category": "Indian",
+  "Name" : "POGLOT",
+  "Description": "Paso de blas - POGLOT",
+  "Category": "Japanese",
   "HasDelivery": true,
-  "ContactEmail": "qwe@qweqwe.com",
-  "ContactNumber": "12312321312",
-  "City": "Aberjan",
-  "Street": "Narra",
+  "ContactEmail": "poglot@qweqwe.com",
+  "ContactNumber": "234331232",
+  "City": "Tokyo",
+  "Street": "Shibuya",
   "PostalCode": "22-231"
+}
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/
+Accept: application/json
+###
+
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/7
+Content-Type: application/json
+
+{
+  "Name": "Siomai",
+  "Description": "Fast Food",
+  "HasDelivery": false
 }
 
 ###

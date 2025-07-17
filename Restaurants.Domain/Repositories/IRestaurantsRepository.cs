@@ -8,4 +8,6 @@ public interface IRestaurantsRepository
 
     Task<Restaurant?> GetRestaurantByIdAsync(int id);
     Task<int> CreateAsync(Restaurant restaurant);
+    Task Delete(Restaurant restaurant);
+    Task SaveChanges();
 }

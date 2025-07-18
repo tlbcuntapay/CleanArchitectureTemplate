@@ -38,7 +38,7 @@ Accept: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/7
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1
 Accept: application/json
 
 ###
@@ -47,7 +47,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name" : "POGLOT",
+  "Name" : "POGLOT2",
   "Description": "Paso de blas - POGLOT",
   "Category": "Japanese",
   "HasDelivery": true,
@@ -60,18 +60,18 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/12
 Accept: application/json
 ###
 
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/7
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/12
 Content-Type: application/json
 
 {
-  "Name": "Siomai",
+  "Name": "POGLOT3",
   "Description": "Fast Food",
-  "HasDelivery": false
+  "HasDelivery": true
 }
 
 ###

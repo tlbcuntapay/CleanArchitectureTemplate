@@ -2,27 +2,26 @@ using Serilog;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
 using Restaurants.Application.Extensions;
-using Serilog.Events;
+using Restaurants.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-
 builder.Services.AddApplication();
-builder.Services.AddInfrastructure(builder.Configuration);
 
+// Add middleware before using UseMiddleware
+builder.Services.AddScoped<ErrorHandlingMiddleware>();
+builder.Services.AddScoped<TimeExecutionMiddleware>();
+
+// Swagger Package
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddInfrastructure(builder.Configuration);
 // Serilog Package 
 builder.Host.UseSerilog((context, config) =>
-    config
-    // Will log only handlers with a level of Information or higher
-    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-    // Will log sql queries of a endpoint
-    .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Information)
-    .WriteTo.File("Logs/Restaurants-API-.log", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true)
-    // changing the default outputTemplate
-    .WriteTo.Console(outputTemplate: "[{Timestamp:dd-MM HH:mm:ss} {Level:u3}] |{SourceContext}| {NewLine}{Message:lj}{NewLine}{Exception}")
+    config.ReadFrom.Configuration(context.Configuration)
 );
 
 var app = builder.Build();
@@ -31,8 +30,17 @@ var scope = app.Services.CreateScope();
 var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 await seeder.Seed();
 
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<TimeExecutionMiddleware>();
+
 // Configure the HTTP request pipeline.
 app.UseSerilogRequestLogging();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 

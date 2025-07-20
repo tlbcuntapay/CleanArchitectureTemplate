@@ -60,7 +60,7 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/12
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/1231231
 Accept: application/json
 ###
 

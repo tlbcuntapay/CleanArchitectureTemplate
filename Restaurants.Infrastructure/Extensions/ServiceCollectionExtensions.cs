@@ -15,11 +15,13 @@ public static class ServiceCollectionExtensions
         var getConnectionString = configuration.GetConnectionString("RestaurantsDb");
         services.AddDbContext<RestaurantsDbContext>(options =>
             options.UseSqlServer(getConnectionString)
+            // Will show Id on logging
             .EnableSensitiveDataLogging()
         );
 
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
+        services.AddScoped<IDishesRepository, DishesRepository>();
         
     }
 }

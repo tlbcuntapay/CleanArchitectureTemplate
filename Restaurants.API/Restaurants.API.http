@@ -38,7 +38,7 @@ Accept: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/13
 Accept: application/json
 
 ###
@@ -65,7 +65,7 @@ Accept: application/json
 ###
 
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/12
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/2
 Content-Type: application/json
 
 {
@@ -74,4 +74,30 @@ Content-Type: application/json
   "HasDelivery": true
 }
 
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/13/dishes
+Content-Type: application/json
+
+{
+    "Name": "Chicken",
+    "Description": "Nashville Chicken",
+    "Price": 99.99,
+    "KiloCalories": 43
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/3/dishes
+Accept: application/json
+###
+
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/13/dishes/12
+Accept: application/json
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/13/dishes
+Accept: application/json
 ###

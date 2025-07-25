@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 // Add middleware before using UseMiddleware
 builder.Services.AddScoped<ErrorHandlingMiddleware>();
@@ -18,7 +19,6 @@ builder.Services.AddScoped<TimeExecutionMiddleware>();
 // Swagger Package
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddInfrastructure(builder.Configuration);
 // Serilog Package 
 builder.Host.UseSerilog((context, config) =>
     config.ReadFrom.Configuration(context.Configuration)

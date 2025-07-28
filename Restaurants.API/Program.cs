@@ -1,8 +1,11 @@
-using Serilog;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Restaurants.API.Middlewares;
+using Restaurants.Application.Extensions;
+using Restaurants.Domain.Entities;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
-using Restaurants.Application.Extensions;
-using Restaurants.API.Middlewares;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +20,28 @@ builder.Services.AddScoped<ErrorHandlingMiddleware>();
 builder.Services.AddScoped<TimeExecutionMiddleware>();
 
 // Swagger Package
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(config =>
+{
+    config.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer"
+    });
+
+    config.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "bearerAuth"}
+            },
+            []
+        }
+    });
+});
+
+// Add Swagger Identity
+builder.Services.AddEndpointsApiExplorer();
 
 // Serilog Package 
 builder.Host.UseSerilog((context, config) =>
@@ -43,6 +67,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Add Identity Middleware
+// .MapGroup Change the name of default identity endpoints
+app.MapGroup("api/identity").MapIdentityApi<User>();
 
 app.UseAuthorization();
 

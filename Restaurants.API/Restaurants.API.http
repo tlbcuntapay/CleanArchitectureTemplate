@@ -100,4 +100,23 @@ Accept: application/json
 
 DELETE {{Restaurants.API_HostAddress}}/api/restaurants/13/dishes
 Accept: application/json
+
 ###
+
+POST {{Restaurants.API_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "email": "ruwi@gmail.com",
+  "password": "Password.1"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "email": "ruwi@gmail.com",
+  "password": "Password.1"
+}

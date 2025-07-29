@@ -1,7 +1,8 @@
 @host = https://localhost
 @port = 7143
-
 @Restaurants.API_HostAddress = https://localhost:7143
+
+@token = CfDJ8DfErMmfcttFjDRphBFLYJHvUmztTYdyexvk5nItLgFyYPoccwDa-WZuKHwAUWofkiDoyAjKtKeJyvCN0Ui9GQYo7CljdQXU6OnF8RbhW7Y7mrxRA_S9K7Zhy-1jQjYXqkQedl1WlU74w5M6HZ8Pi2mV3sI8nOk57sWtXoA0fBu6vqFgvuE6T8Hh-pUFRVFeUOQhVP2yGfDMG_GXXdtl0f3KNP3x2LuAQLSbLuJ5zL-pK_-SnBthb0aJsIpKtCuFpaBgFYLDg4eOOzQYFq95Phj-oEqA4kjMbOKsvPkdXGyNkNAwPGvyEE4X4yKHMN7bJRk0yrNYO4BDmueoeSCaFW8juM0yIyGk28EVeDeMwAEoq6QTg_gEMfOC6Mt75b9qJaEasYwF44CxOmeC3B65ZhkwZk-yFTtmMHx8J4EKrGK7SvSGXr42COMoeR-7iENVQZzBgMnGIx55YijKDPdkTRwCIXsjTE-hO1T9VpZAaRtElcaRl-uJeHU8Xuphey0Wn1sRphkSNUUKFtlSPm2mpbPJj8Osb1zvnmrZJg6LRD8J8qxbOCT9DEH_FV6o-Mvtp3vaI6cpjy5b0Crh7eLNovdhGrUwqcQJtcbmbJQXtS6tXd3E7cl7NgZUnISfwoquqzxr_wJVXV3oghEWwNrnichBFxWEsTsM_ayefQXIPtsE4ErRfpIZCQbyRppEPXH1fw
 
 GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/weather?max=15
 Accept: application/json
@@ -34,11 +35,13 @@ Content-Type: application/json
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants/13
+Authorization: Bearer {{token}}
 Accept: application/json
 
 ###
@@ -103,7 +106,7 @@ Accept: application/json
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/register
+POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
@@ -113,10 +116,22 @@ Content-Type: application/json
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/login
+POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
   "email": "ruwi@gmail.com",
   "password": "Password.1"
 }
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/identity/user
+Authorization: Bearer {{$bearerToken}}
+Content-Type: application/json
+
+{
+  //UpdateUserDetailsCommand
+}
+
+###

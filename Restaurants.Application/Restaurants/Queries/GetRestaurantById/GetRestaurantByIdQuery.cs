@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Configuration.UserSecrets;
 using Restaurants.Application.Restaurants.DTO;
 
 namespace Restaurants.Application.Restaurants.Queries.GetRestaurantById;

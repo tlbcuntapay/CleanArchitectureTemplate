@@ -2,7 +2,9 @@
 @port = 7143
 @Restaurants.API_HostAddress = https://localhost:7143
 
-@token = CfDJ8DfErMmfcttFjDRphBFLYJHvUmztTYdyexvk5nItLgFyYPoccwDa-WZuKHwAUWofkiDoyAjKtKeJyvCN0Ui9GQYo7CljdQXU6OnF8RbhW7Y7mrxRA_S9K7Zhy-1jQjYXqkQedl1WlU74w5M6HZ8Pi2mV3sI8nOk57sWtXoA0fBu6vqFgvuE6T8Hh-pUFRVFeUOQhVP2yGfDMG_GXXdtl0f3KNP3x2LuAQLSbLuJ5zL-pK_-SnBthb0aJsIpKtCuFpaBgFYLDg4eOOzQYFq95Phj-oEqA4kjMbOKsvPkdXGyNkNAwPGvyEE4X4yKHMN7bJRk0yrNYO4BDmueoeSCaFW8juM0yIyGk28EVeDeMwAEoq6QTg_gEMfOC6Mt75b9qJaEasYwF44CxOmeC3B65ZhkwZk-yFTtmMHx8J4EKrGK7SvSGXr42COMoeR-7iENVQZzBgMnGIx55YijKDPdkTRwCIXsjTE-hO1T9VpZAaRtElcaRl-uJeHU8Xuphey0Wn1sRphkSNUUKFtlSPm2mpbPJj8Osb1zvnmrZJg6LRD8J8qxbOCT9DEH_FV6o-Mvtp3vaI6cpjy5b0Crh7eLNovdhGrUwqcQJtcbmbJQXtS6tXd3E7cl7NgZUnISfwoquqzxr_wJVXV3oghEWwNrnichBFxWEsTsM_ayefQXIPtsE4ErRfpIZCQbyRppEPXH1fw
+@userToken = CfDJ8DfErMmfcttFjDRphBFLYJFRsB-Rr4tLSspx4y5eag9PkgE1tcoqRy5lRKihN7wsRKo8ExVKoG4jKOPUmy8G5Iml7Snhvcum9Q_a17QP0MAxLCcOMc8TYguq7imayeL5QQEC8m6S0QImGrRQ24y1rUwVRaJg7Rip_8XWpQhNU0-kdu7tFDL4duGCsIptZITPRq-sNi-_EagNhm5kwjL1hkD-9HsthbAS8Nh04_KUv9Ao2jZpo3M_So3cgHRYBqInRyMx8X1ThqTn2IUL8C0Ke4_NrzGfrFa885TZDRf83THTj6w9IHFaInlxwtFiHX5kY9_4niHess3rZxdSAb5NrSH5y8ye6kcCGBJJFH9yc4HUcK4pvxBbHWwLq6_ALz_7IKMwmoowzD6J59COO1UgG9neDPlIcn0Owd03blonFuVaOrNi-A9x7M0EMX8b2vCiEQPykmJYpvOGQWSACUFoGi1SqMnz4wps-fn8bSkRhwj4ugyroGxF2DFjnEQlg-2BOgqs6fPD-eDVP9rSu8uJ63YT9WQY-mkKhJ0Jzsu2DhrpMvMrOf3-xzK0kk-EYjVEqObAfoxJ92tep8Bv0NpJNNo4i8TrtDOlkOx4gPK-x7dQm4TRyGAqsKpRX14OCxjfEOrP_pChHuWGJ_1BvDFM9a1_IDAVqtesinQz3E3mg5UMiBSQryF3RFBfKhbOl9yEaA
+@ownerToken = CfDJ8DfErMmfcttFjDRphBFLYJHI2SEAvnomo_gLOKMqZ7twyhiThx6D8KlxRDDcc8HG4GMjTMw8rdUncIh_qxiNao3pLI3aP8ByVryu7McX-ynxmmT7ISNE5L5WWYT6fW_IAn_WTDeGH6nLrCcAgtEaxFZ1BiHkfJv62kTZyUQUjPB-cjgI1w5O5S_TpMfpRzhcPeaq-kpakjsDD--tas1u6Hu3UZWc-MZDkD1VWWToylOPTKTEjUFCQnGf9TJqmNVhlzyKCVfuXKbmgoGdSuf8OvK5Xn4S4zbTrvCrSzmGCe1bsWLmZcgVvVBO30_6tKb_VanEZ_MuibJVABqObyx_OWfCtFWh1o4zaUnNBEoC0EeDZnJ52Z_RTDxGhv-cW9n3ogKa2Jd0Sw14DqH8AeBzIvwA6XJ6darFy9pER8UZZRT9RUaYYNA1vwA4M050FXttXR4waD_SuRJ8VPllB786kzwCZi9kcXM32dMamEZ81GqMhVyyBJE1ba2mjrGMkKFZb-d2ou7MUa1991VXW4Ru2vzcls-FDfOcSSPiMOzY8AlTArGX4_8VeXlAI9VXfGlEwkgEkw_iYVMdUpYmhahUAVCRScKv5aC_45ylHLcm1G6vIXAB3OabGJHEJGWbxf4jfP6Ow1F3RH4GKDZv8ceJsWbLT-AnwpkLEe9SWq09ad2tzIRUX7uJiLZ201-6I8flzL9fqkuFWfPBMepdiVCYwhHVr7NP2Uxo8-pu_B9w_3Av21HwFPSEuT0uXCfvBNekQGMxGRCBNC7txYSxuqr8U6HN1A82UDv-QeZH9RaMaXIf
+@adminToken = CfDJ8DfErMmfcttFjDRphBFLYJGD9btRs_4HaVnKEQNTgDBbvB558Tw8DqSD4a9AaAJh8dJSS_JyDPHNmQtkvkxpK8Q9NTuAuzREk7L19BzXt4JnWMkrZPPl-3haMiEs243HpqMouLVMnjgo8DVnwg7jVTR8f7ogGI9rNX1X1V9lDVRgMgYYd7AKKa_7e2-xxj0W4CleGuUvoQcIi1VACkcG3k37h58wWfmDWE3y2X-LKBzZXIOOOuGMxOh2qCC6GYweoV8DM5KR3YuPqNV8r8tkg6rUtKw3JOtZ5kCe-cfN7sqr8ofC6opKmSFJ4ZI9lwhaE2OR_zebeRlBPg59XhQnI06VaePkv9qDLi0hp3-KVQDvb07iPYeZVZ6bWWdZzNDky0xBH10_Bi7U2MAKUeRhy5nV6tBhRQaKSZTMNpHr-Q64XsyWlmKP-srOkGjzdloGn2S0DqPk9H_6ViAevXK4wKpWHCKh_tGRAnTmPlzyLmHK3JiAKlQ1lSYw9qNDTyG898HWYzAsn-qhnl8NdmdB3_QL43r_af5WoCOcVDhVPoiSGr_R6EtJ3wQgQwIqfiQzZ2p4B4F7WIaa0UjDUJsiptrXDn370cKP_eX0rRQH0-Keqn4t73_rdBx02qO_VpLK_sbunAc5RgNt7Ve3GSWssnmAPM0cfZGRLOANK_MO6tlVgfV8koOYljwhOdgi69dq7Q
 
 GET {{Restaurants.API_HostAddress}}/api/weatherforecast/23/weather?max=15
 Accept: application/json
@@ -41,21 +43,22 @@ Accept: application/json
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants/13
-Authorization: Bearer {{token}}
+Authorization: Bearer {{ownerToken}}
 Accept: application/json
 
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{ownerToken}}
 Content-Type: application/json
 
 {
-  "Name" : "POGLOT2",
-  "Description": "Paso de blas - POGLOT",
-  "Category": "Japanese",
+  "Name" : "HATDOG NA BLUE",
+  "Description": "MAINIT NA HOTDOG",
+  "Category": "Chinese",
   "HasDelivery": true,
-  "ContactEmail": "poglot@qweqwe.com",
-  "ContactNumber": "234331232",
+  "ContactEmail": "HATDOG@qweqwe.com",
+  "ContactNumber": "093333333",
   "City": "Tokyo",
   "Street": "Shibuya",
   "PostalCode": "22-231"
@@ -108,20 +111,19 @@ Accept: application/json
 
 POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
-
 {
-  "email": "ruwi@gmail.com",
-  "password": "Password.1"
+  "email": "admin2@gmail.com",
+  "password": "Password.12"
 }
+
 
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
-
 {
-  "email": "ruwi@gmail.com",
-  "password": "Password.1"
+  "email": "owner@gmail.com",
+  "password": "Password.12"
 }
 
 ###
@@ -130,8 +132,5 @@ PATCH {{Restaurants.API_HostAddress}}/api/identity/user
 Authorization: Bearer {{$bearerToken}}
 Content-Type: application/json
 
-{
-  //UpdateUserDetailsCommand
-}
 
 ###

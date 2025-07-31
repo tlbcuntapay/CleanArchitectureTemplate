@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
+using Restaurants.Infrastructure.Authorization;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repository;
 using Restaurants.Infrastructure.Seeders;
@@ -21,15 +22,22 @@ public static class ServiceCollectionExtensions
             .EnableSensitiveDataLogging()
         );
 
-        // Add Identity services
+        // Add Identity services & to also show the identity endpoints on swagger
         services.AddIdentityApiEndpoints<User>()
-            // AddRoles cecessary to get roles working
+            // AddRoles necessary to get roles working
             .AddRoles<IdentityRole>()
+            // Added for custom claims principal factory
+            .AddClaimsPrincipalFactory<RestaurantsUserClaimsPrincipleFactory>()
             .AddEntityFrameworkStores<RestaurantsDbContext>();
 
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
         services.AddScoped<IDishesRepository, DishesRepository>();
-        
+
+        // Register custom claims authorization
+        services.AddAuthorizationBuilder()
+            .AddPolicy("HasNationality", builder => builder.RequireClaim("Nationality"));
     }
 }
+
+

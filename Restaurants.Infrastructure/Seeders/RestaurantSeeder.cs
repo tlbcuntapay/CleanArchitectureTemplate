@@ -28,7 +28,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
         }
     }
 
-    private IEnumerable<IdentityRole> GetRoles()
+    private static List<IdentityRole> GetRoles()
     {
         List<IdentityRole> roles = 
             [
@@ -49,7 +49,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
         return roles;
     }
 
-    private IEnumerable<Restaurant> GetRestaurants()
+    private static List<Restaurant> GetRestaurants()
     {
         List<Restaurant> restaurants = [
             new ()

@@ -17,12 +17,12 @@ public class RestaurantsUserClaimsPrincipleFactory(
         
         if (user.Nationality != null)
         {
-            id.AddClaim(new Claim("Nationality", user.Nationality));
+            id.AddClaim(new Claim(AppClaimsType.Nationality, user.Nationality));
         }
 
         if (user.DateOfBirth != null)
         {
-            id.AddClaim(new Claim("DateOfBirth", user.DateOfBirth.Value.ToString("yyyy-MM-dd")));
+            id.AddClaim(new Claim(AppClaimsType.DateOfBirth, user.DateOfBirth.Value.ToString("yyyy-MM-dd")));
         }
 
 

@@ -34,6 +34,7 @@ public class RestaurantController(IMediator mediator) : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = PolicyNames.MaximumOwnedRestaurants)]
     [Authorize(Roles = UserRoles.Owner)]
     public async Task<IActionResult> CreateRestaurant(CreateRestaurantCommand command)
     {

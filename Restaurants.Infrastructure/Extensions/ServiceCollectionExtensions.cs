@@ -41,9 +41,11 @@ public static class ServiceCollectionExtensions
         // Register custom claims authorization
         services.AddAuthorizationBuilder()
             .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimsType.Nationality, "BISAKOL", "TANGALOG"))
-            .AddPolicy(PolicyNames.AtLeast20, builder => builder.AddRequirements(new MinimumAgeRequirement(20)));
+            .AddPolicy(PolicyNames.AtLeast20, builder => builder.AddRequirements(new MinimumAgeRequirement(20)))
+            .AddPolicy(PolicyNames.MaximumOwnedRestaurants, builder => builder.AddRequirements(new MaxOwnedRestaurantsRequirement(2)));
 
         services.AddScoped<IAuthorizationHandler, MinimumAgeRequirementHandler>();
+        services.AddScoped<IAuthorizationHandler, MaxOwnedRestaurantsRequirementHandler>();
         services.AddScoped<IRestaurantAuthorizationService, RestaurantAuthorizationService>();
     }
 }

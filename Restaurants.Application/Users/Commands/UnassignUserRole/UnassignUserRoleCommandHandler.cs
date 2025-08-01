@@ -19,7 +19,7 @@ public class UnassignUserRoleCommandHandler(
         logger.LogWarning("Deleting Role of user: {@Request}", request);
         
         // Validate user and role if exist
-        var user = await userManager.FindByEmailAsync(request.Email) ?? throw new NotFoundException(nameof(User), request.Email);
+        var user = await userManager.FindByEmailAsync(request.UserEmail) ?? throw new NotFoundException(nameof(User), request.UserEmail);
         var role = await roleManager.FindByNameAsync(request.RoleName) ?? throw new NotFoundException(nameof(IdentityRole), request.RoleName);
 
         await userManager.RemoveFromRoleAsync(user, role.Name!);
